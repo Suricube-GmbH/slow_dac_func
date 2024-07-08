@@ -1,0 +1,15 @@
+[package]
+name = "slow_dac_func"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+extism-pdk = "1.1.0"
+serde = "1.0.202"
+serde_json = "1.0.117"
+cube_library_development_toolbox = { git = "https://github.com/Zeug555/Rust_Galaxy_Cube_Plugin_Dev_Toolbox", version = "0.1.4" }
+
+[lib]
+crate_type = ["cdylib"]
