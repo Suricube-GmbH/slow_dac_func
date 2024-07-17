@@ -144,7 +144,7 @@ pub fn update(input: String) -> FnResult<String> {
         parameter_input_json.insert("command".to_string(), ParametersType::u32(3));
 
         // TX_enable insertion and first modification
-        parameter_input_json.insert("tx_enable".to_string(), ParametersType::bool(true));
+        parameter_input_json.insert("tx_enable".to_string(), ParametersType::u32(1));
 
 
         let mut final_request = parameters_map_to_json(parameter_input_json);
@@ -161,7 +161,7 @@ pub fn update(input: String) -> FnResult<String> {
 #[plugin_fn]
 pub fn tx_disable (input: String) -> FnResult<String> {
     let mut parameter_input_json: BTreeMap<String, ParametersType> = parameters_json_to_map(&input);
-    parameter_input_json.insert("tx_enable".to_string(), ParametersType::bool(false));
+    parameter_input_json.insert("tx_enable".to_string(), ParametersType::u32(0));
     let json_return = parameters_map_to_json(parameter_input_json);
 
     Ok(json_return)
